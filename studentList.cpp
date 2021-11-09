@@ -1,6 +1,19 @@
+/*
+Stefan Smith
+11 November, 2021
+Student List - Processes commands from console to add or remove students from a list.
+
+ADD - Adds a student to the list, will prompt for the Students name, last name, ID number, and GPA.
+DELETE - Removes a specified student from the list, will prompt for the Students ID number.
+PRINT - Prints every Student in the list, as well as their attributes.
+QUIT - Ends the program. (And deletes the list.)
+*/
+
+
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <iomanip>
 
 using namespace std;
 
@@ -60,6 +73,7 @@ void addCommand(vector<Student*> *studentList) {
   cout << "Student last name: ";
   cin.getline(newStudent->lastName, 20);
   cout << "Student ID number: ";
+  cout << setprecision(2) << fixed;
   cin >> newStudent->id;
   cout << "Student GPA: ";
   cin >> newStudent->gpa;
